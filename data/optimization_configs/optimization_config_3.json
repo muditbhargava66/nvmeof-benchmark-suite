@@ -1,0 +1,11 @@
+{
+    "name": "Balanced",
+    "description": "Balanced optimization configuration",
+    "parameters": {
+      "queue_depth": 32,
+      "io_size": 16384,
+      "num_threads": 4,
+      "use_direct_io": true,
+      "use_polling_mode": false
+    }
+  }

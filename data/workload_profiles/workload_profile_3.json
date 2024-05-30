@@ -1,0 +1,10 @@
+{
+    "name": "Random Read/Write",
+    "description": "50% random read, 50% random write workload",
+    "total_size": 1073741824,
+    "block_size": 4096,
+    "num_blocks": 262144,
+    "read_percentage": 50,
+    "write_percentage": 50,
+    "random_percentage": 100
+  }

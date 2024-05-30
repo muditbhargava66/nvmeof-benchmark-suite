@@ -1,0 +1,28 @@
+{
+    "workload_profile": "workload_profile_1.json",
+    "timestamp": "2023-06-01T10:30:00Z",
+    "metrics": {
+      "throughput": {
+        "read": 1024.5,
+        "write": 0,
+        "total": 1024.5
+      },
+      "iops": {
+        "read": 250000,
+        "write": 0,
+        "total": 250000
+      },
+      "latency": {
+        "read": {
+          "min": 50,
+          "max": 200,
+          "avg": 100
+        },
+        "write": {
+          "min": 0,
+          "max": 0,
+          "avg": 0
+        }
+      }
+    }
+  }

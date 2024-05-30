@@ -30,3 +30,40 @@
 *.exe
 *.out
 *.app
+
+# Build directories
+build/
+cmake-build-*/
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Log files
+*.log
+
+# Test output files
+tests/*.xml
+tests/*.json
+
+# Coverage reports
+coverage/
+
+# Documentation
+docs/html/
+docs/latex/
+
+# Dependency directories
+third_party/**/build/
+third_party/**/dist/
+third_party/**/lib/
+third_party/**/bin/
+
+# Other generated files
+compile_commands.json
+.cache/

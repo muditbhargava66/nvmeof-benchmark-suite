@@ -1,0 +1,11 @@
+{
+    "name": "High Throughput",
+    "description": "Optimization configuration for high throughput",
+    "parameters": {
+      "queue_depth": 128,
+      "io_size": 131072,
+      "num_threads": 8,
+      "use_direct_io": true,
+      "use_polling_mode": false
+    }
+  }

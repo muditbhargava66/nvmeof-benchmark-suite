@@ -1,0 +1,11 @@
+{
+    "name": "Low Latency",
+    "description": "Optimization configuration for low latency",
+    "parameters": {
+      "queue_depth": 1,
+      "io_size": 4096,
+      "num_threads": 1,
+      "use_direct_io": true,
+      "use_polling_mode": true
+    }
+  }
