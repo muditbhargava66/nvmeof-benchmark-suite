@@ -46,7 +46,7 @@ To contribute to the NVMe-oF Benchmarking Suite, follow these steps:
 
 2. Clone your forked repository to your local development environment:
    ```
-   git clone https://github.com/muditbhargava66/nvmeof-benchmarking-suite.git
+   git clone https://github.com/muditbhargava66/nvmeof-benchmark-suite.git
    ```
 
 3. Create a new branch for your feature or bug fix:

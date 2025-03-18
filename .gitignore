@@ -1,6 +1,5 @@
-# Prerequisites
-*.d
-
+# C++ build artifacts
+###################
 # Compiled Object files
 *.slo
 *.lo
@@ -30,40 +29,184 @@
 *.exe
 *.out
 *.app
+*.elf
 
-# Build directories
+# Build directories and files
+###################
 build/
 cmake-build-*/
-
-# IDE files
-.vscode/
-.idea/
-
-# Temporary files
-*.swp
-*.swo
-*~
-
-# Log files
-*.log
-
-# Test output files
-tests/*.xml
-tests/*.json
-
-# Coverage reports
-coverage/
-
-# Documentation
-docs/html/
-docs/latex/
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+CPackConfig.cmake
+CPackSourceConfig.cmake
+compile_commands.json
+_deps/
+.cmake/
+.cache/
+cmake-build/
+Testing/
+install_manifest.txt
+*.make
+Makefile
+.ninja_deps
+.ninja_log
+build.ninja
 
 # Dependency directories
+###################
 third_party/**/build/
 third_party/**/dist/
 third_party/**/lib/
 third_party/**/bin/
+third_party/spdk/
+third_party/googletest/
+third_party/dependencies/
+vendor/
 
-# Other generated files
-compile_commands.json
-.cache/
+# IDE and editor specific files
+###################
+# Visual Studio Code
+.vscode/
+*.code-workspace
+.history/
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+*.iws
+out/
+cmake-build-*/
+
+# Eclipse
+.project
+.cproject
+.settings/
+
+# Visual Studio
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.vcproj
+*.vcproj.filters
+*.vcproj.user
+*.suo
+*.user
+*.userosscache
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+ipch/
+.vs/
+
+# Editor temporary/backup files
+*~
+*.bak
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Test and debug files
+###################
+# Testing output
+tests/output/
+tests/*.xml
+tests/*.json
+tests/test_*
+tests/temp/
+
+# Debug logs
+*.log
+logs/
+debug/
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Coverage reports
+coverage/
+coverage.info
+*.gcno
+*.gcda
+*.gcov
+lcov.info
+coverage_report/
+coverage.html/
+
+# Benchmark results
+data/benchmark_results/*.csv
+data/benchmark_results/*.json
+data/analysis_reports/
+
+# Docker related
+###################
+.docker/
+.dockerignore
+docker-compose.override.yml
+
+# Environment and package management
+###################
+.env
+.env.local
+.env.*.local
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+
+# OS specific files
+###################
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Project-specific ignores
+###################
+# Ignore data files except for examples/templates
+data/benchmark_results/*
+!data/benchmark_results/.gitkeep
+data/analysis_reports/*
+!data/analysis_reports/.gitkeep
+data/optimization_configs/*
+!data/optimization_configs/optimization_config_*.json
+spdk_mock/build/
+
+# Documentation builds
+###################
+docs/html/
+docs/latex/
+docs/doxygen_sqlite3.db
+docs/xml/
+docs/man/

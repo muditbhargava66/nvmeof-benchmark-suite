@@ -1,0 +1,60 @@
+FROM ubuntu:22.04
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    gcc \
+    g++ \
+    cmake \
+    make \
+    libnuma-dev \
+    libssl-dev \
+    libcrypto++-dev \
+    libcap-dev \
+    python3 \
+    python3-pip \
+    pkg-config \
+    libaio-dev \
+    ninja-build \
+    libcunit1-dev \
+    gdb \
+    valgrind \
+    vim \
+    nano \
+    curl \
+    wget \
+    htop \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install SPDK dependencies
+RUN pip3 install meson pyelftools
+
+# Set up working directory
+WORKDIR /app
+
+# Clone SPDK (specific version for stability)
+RUN git clone --recurse-submodules https://github.com/spdk/spdk.git /opt/spdk
+WORKDIR /opt/spdk
+RUN git checkout v23.05
+
+# Configure and build SPDK
+RUN ./configure --disable-tests --disable-unit-tests --disable-examples
+RUN make -j$(nproc)
+
+# Set environment variables
+ENV SPDK_DIR=/opt/spdk
+ENV LD_LIBRARY_PATH=/opt/spdk/build/lib:$LD_LIBRARY_PATH
+
+# Set up working directory for the project
+WORKDIR /app
+
+# Create build directory
+RUN mkdir -p /app/build
+
+# Add a welcome message
+RUN echo 'echo "NVMe-oF Benchmarking Suite Development Environment"' >> /root/.bashrc
+RUN echo 'echo "Run cmake and make in the /app/build directory to build the project."' >> /root/.bashrc
+RUN echo 'echo "SPDK is installed at $SPDK_DIR"' >> /root/.bashrc
+
+# Set the entrypoint
+CMD ["/bin/bash"]

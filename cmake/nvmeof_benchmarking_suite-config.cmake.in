@@ -1,0 +1,22 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+# Find dependencies
+find_dependency(Threads REQUIRED)
+
+# Our library targets
+include("${CMAKE_CURRENT_LIST_DIR}/nvmeof_benchmarking_suite-targets.cmake")
+
+# Component support
+set(nvmeof_benchmarking_suite_benchmarking_FOUND TRUE)
+set(nvmeof_benchmarking_suite_bottleneck_analysis_FOUND TRUE)
+set(nvmeof_benchmarking_suite_optimization_engine_FOUND TRUE)
+set(nvmeof_benchmarking_suite_utils_FOUND TRUE)
+
+# Provide useful message for successful find
+if(nvmeof_benchmarking_suite_FIND_REQUIRED)
+  message(STATUS "Found nvmeof_benchmarking_suite @PROJECT_VERSION@")
+endif()
+
+check_required_components(nvmeof_benchmarking_suite)
