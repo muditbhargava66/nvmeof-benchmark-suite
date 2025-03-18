@@ -17,12 +17,12 @@ Follow these steps to install the NVMe-oF Benchmarking Suite:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/muditbhargava66/nvmeof-benchmarking-suite.git
+   git clone https://github.com/muditbhargava66/nvmeof-benchmark-suite.git
    ```
 
 2. Navigate to the project directory:
    ```
-   cd nvmeof-benchmarking-suite
+   cd nvmeof-benchmark-suite
    ```
 
 3. Create a build directory and navigate to it:

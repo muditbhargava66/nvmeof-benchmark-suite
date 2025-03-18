@@ -7,9 +7,13 @@ namespace optimization_engine {
 
 class ConfigKnowledgeBase;
 
+}  // namespace optimization_engine
+
 namespace bottleneck_analysis {
 class BottleneckDetector;
-}
+}  // namespace bottleneck_analysis
+
+namespace optimization_engine {
 
 class Optimizer {
 public:
@@ -18,7 +22,7 @@ public:
     void OptimizeConfiguration(double cpu_usage, double memory_usage, uint64_t network_usage);
 
 private:
-    std::string GetBottleneckType(double cpu_usage, double memory_usage, uint64_t network_usage);
+    std::string GetBottleneckType(double cpu_usage, double memory_usage, uint64_t network_usage) const;
 
     const ConfigKnowledgeBase& config_kb_;
     const bottleneck_analysis::BottleneckDetector& bottleneck_detector_;

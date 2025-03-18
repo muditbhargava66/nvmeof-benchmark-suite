@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  nvmeof-benchmarking:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: nvmeof-benchmarking:latest
+    container_name: nvmeof-benchmarking
+    privileged: true  # Required for NVMe device access
+    volumes:
+      - ../data:/app/data
+      - ../results:/app/results
+    environment:
+      - SPDK_DIR=/opt/spdk
+    command: --workload-profile /app/data/workload_profiles/workload_profile_1.json --output-dir /app/results
+    cap_add:
+      - SYS_ADMIN  # Required for NVMe operations
+      - IPC_LOCK   # Required for memory locking
+    ulimits:
+      memlock: -1   # Unlimited memory locking
+
+  nvmeof-development:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    image: nvmeof-development:latest
+    container_name: nvmeof-development
+    volumes:
+      - ..:/app
+    environment:
+      - SPDK_DIR=/opt/spdk
+    command: /bin/bash
+    tty: true
+    stdin_open: true
